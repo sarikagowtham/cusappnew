@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { createBottomTabNavigator,createAppContainer} from 'react-navigation'
-import Homenavigation from './components/Home/Homenavigation'
-import Homeproducts from './components/Home/Homeproducts'
+ import React, { Component } from "react";
+import { createBottomTabNavigator,createAppContainer,createStackNavigator} from 'react-navigation'
+import Homeproducts from './components/Home/Homeproducts';
+import Homenavigation from './components/Home/Homenavigation';
 import Offersnavigation from './components/Offers/Offersnavigation';
 import Popularnavigation from './components/Popular/Popularnavigation';
 import Cartnavigation from './components/Cart/Cartnavigation';
@@ -9,6 +9,7 @@ import Accountnavigation from './components/Account/Accountnavigation'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { SearchBar } from 'react-native-elements';
 import { Header, Body, Right, Title, Container, Left} from 'native-base';
+import Homeproducts2 from "./components/Home/Homeproducts2";
   
 //  const Homenavigator = createStackNavigator({
 //    Homenavigation: { screen: Homenavigation},
@@ -91,20 +92,32 @@ import { Header, Body, Right, Title, Container, Left} from 'native-base';
     
 //   },
 //  )
+const stacknav=createStackNavigator({
+  BottomNavigator:{
+    screen:BottomNavigator
+  },
+    Homeproducts:{
+      screen:Homeproducts
+    },
+    Homeproducts2:{
+      screen:Homeproducts2
+    }
+  },
+  {
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
+   }
+)
   
- const AppContainer=createAppContainer(BottomNavigator);
+ const AppContainer=createAppContainer(stacknav);
  
  export default class App extends Component{
-  state = {
-    search: '',
-  };
-
-  updateSearch = search => {
-    this.setState({ search });
-  };
+ 
 
  render(){
-  const { search } = this.state;
+  
 
 return(
 
@@ -123,15 +136,8 @@ return(
          </Right>
          
         </Header>
-          
-        <SearchBar 
-        placeholder="Search..."
-        onChangeText={this.updateSearch}
-        value={search}
-        platform="android"
-      />
+      
  <AppContainer/>
  </Container>
  ) }
 }
-// export default createStackNavigator({ Homenavigation }, { headerMode: "none" });

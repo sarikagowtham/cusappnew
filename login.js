@@ -1,6 +1,7 @@
 import React from 'react';
-import { View,StyleSheet } from "react-native";
+import { View,StyleSheet} from "react-native";
 import { Input,Button,Card } from 'react-native-elements';
+import Homenavigation from './components/Bottomnav/Home/Homenavigation'
 // import {loginUser} from './project11/redux/actions/authActions';
 // import {connect} from 'react-redux';
  class Login extends React.Component {

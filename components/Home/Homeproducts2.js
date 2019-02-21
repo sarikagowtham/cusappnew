@@ -1,16 +1,15 @@
 import React from 'react';
-// import {View,Text,StyleSheet} from "react-native";
-import Hometemp from './Hometemp';
+import Hometemp2 from './Hometemp2';
 import Offersnavigation from '../Offers/Offersnavigation';
 import Popularnavigation from '../Popular/Popularnavigation';
 import Cartnavigation from '../Cart/Cartnavigation';
 import Accountnavigation from '../Account/Accountnavigation';
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator,createAppContainer} from 'react-navigation';
 
 const BottomNavigator= createBottomTabNavigator({
-    Hometemp: {
-      screen: Hometemp,
+    Hometemp2: {
+      screen: Hometemp2,
       navigationOptions: {
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => (
@@ -59,8 +58,8 @@ const BottomNavigator= createBottomTabNavigator({
   
   }, 
      {
-       initialRouteName: 'Hometemp',
-      order: ['Hometemp', 'Offersnavigation','Popularnavigation','Cartnavigation','Accountnavigation'],
+       initialRouteName: 'Hometemp2',
+      order: ['Hometemp2', 'Offersnavigation','Popularnavigation','Cartnavigation','Accountnavigation'],
      
       navigationOptions: {
         tabBarVisible: true
@@ -71,7 +70,7 @@ const BottomNavigator= createBottomTabNavigator({
       }
     });
     const AppContainer=createAppContainer(BottomNavigator);
- class Homeproducts extends React.Component {
+ class Homeproducts2 extends React.Component {
     
     render() {
       return (
@@ -81,4 +80,4 @@ const BottomNavigator= createBottomTabNavigator({
        ) }
   }
  
-  export default Homeproducts;
+  export default Homeproducts2;
